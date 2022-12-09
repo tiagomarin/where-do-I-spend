@@ -1,0 +1,17 @@
+<nav class="flex w-5/6 justify-between mb-5 mx-auto mt-2">
+  <div class="flex gap-2 items-center">
+    <%= image_tag "icon.png", width: 30 %>
+    <span> Where do I spend </span>
+  </div>
+  <% if current_user %>
+    <ul class="hidden md:flex items-center gap-5 inset-0 h-10">
+      <li>
+        <%= current_user.name.split(' ')[0] %>
+      </li>
+      <li>
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  <% end %>
+</nav>
+

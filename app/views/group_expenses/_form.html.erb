@@ -1,0 +1,27 @@
+<%= form_with(model: [current_user, @group, group_expense], class: "contents") do |form| %>
+  <% if group_expense.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(group_expense.errors.count, "error") %> prohibited this group_expense from being saved:</h2>
+
+      <ul>
+        <% group_expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :group_id %>
+    <%= form.select :group_id, [@groups], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :expense_id %>
+     <%= form.select :expense_id, [@expenses], class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

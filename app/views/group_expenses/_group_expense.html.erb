@@ -1,0 +1,17 @@
+<div id="<%= dom_id group_expense %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Group:</strong>
+    <%= group_expense.group_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Expense:</strong>
+    <%= group_expense.expense_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this group expense", group_expense, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this group expense', edit_group_expense_path(group_expense), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<%= link_to user_group_path(current_user, group) do %>
+  <div id="<%= dom_id group %>" class="bg-gray-100">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Name:</strong>
+      <%= group.name %>
+    </p>
+
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Icon:</strong>
+      <%= group.icon %>
+    </p>
+
+    <p class="my-5">
+      <strong class="block font-medium mb-1">ADD Total:</strong>
+    </p>
+  </div>
+<% end %>
